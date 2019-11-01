@@ -1,0 +1,9 @@
+#!/bin/bash
+
+path='/var/local/config'
+mkdir -p $path
+
+hidfile="$path/hid"
+echo hidfile
+
+hid=$(openssl rand -hex 16)
