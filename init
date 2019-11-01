@@ -1,5 +1,12 @@
 #!/bin/bash
 
+apt='/usr/bin/apt'
+$apt update
+$apt -y upgrade
+
+$apt -y install openssl
+$apt -y install autossh
+
 path='/var/local/config'
 mkdir -p $path
 
@@ -15,9 +22,3 @@ authkey='ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAtpvkPG9cTdNSx9iQb8W58ZIUjoUhxwzqjZH
 if [ "$(cat ~/.ssh/authorized_keys | grep "$authkey" | wc -l)" == "0" ]; then
   echo "$authkey" >> /root/.ssh/authorized_keys
 fi
-
-apt='/usr/bin/apt'
-$apt update
-$apt -y upgrade
-
-$apt -y install autossh
