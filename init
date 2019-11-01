@@ -4,11 +4,11 @@ path='/var/local/config'
 mkdir -p $path
 
 hidfile="$path/hid"
-if [ -f "$T1" ]; then
+if [ -f "$hidfile" ]; then
   hid=$(cat $hidfile)
 else
   hid=$(openssl rand -hex 16)
-  echo $hid >> $hidfile
+  echo $hid > $hidfile
 fi
 
 echo $hid
