@@ -12,6 +12,6 @@ else
 fi
 
 authkey='ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAtpvkPG9cTdNSx9iQb8W58ZIUjoUhxwzqjZHRgEjDQ9F3o5HokDPoPddqTGL5cMSEDHW28IIUGM48ZXCoK9x4rvUshQQjwKi7u50wFo3BpQbY6yaMmBhxDWIRxMy2OzyuYEMM4MfLUopnP3aH5LwVScHlw+C3ShlSH63dRFiPmY3dgAuhjLzCzJf9JTQE5+P/DIA6Tu/gx+1NPpIbMjhNMBDhBkIVL2NAK/ONvw9ifrIboQ+YR6faMEhUss1aAviLY2TCKVxZTk635fBzL94xQV0vF8Vyu1uplJrttBV/6FXrYYAHGIBzm8IMDfzHLGxoD6LCwvCIuaA/jRupLvOEPo2Cd9z93QDITI2+BOMW9YU1i3nZwW25h5xt+bV5qGKKivR1fJMmUAzRj6IehcbrHOPNBl7fUAXOBlJ9ajxJwins8CO2y0QsEyHZRBA1Gml6x/NPcq9ji9BN7HZJuIioJ0+Riw9XYZfPi6ZC9fAYbnvQBHfr9RVNHwoJ6QXPBEux838IMayqPUuyrCZXtomPzdOdSNGjipJa3eTCsU69fxg7tPy7JupDLw+6ZufEuy+ENqX2j/pNDWDrNzcHetZ86KGLFfZFcvoAcxmCzbZxAYqQOIDSxhamNwm70/xhPbcvS0ufGsxNMgTsgSAkcmdD8MuzFlraZheSCZNV8BrDkk0= 20191102-admin'
-if [ "$(cat ~/.ssh/authorized_keys | grep "$authkey" | wc -l)" "0" ]; then
+if [ "$(cat ~/.ssh/authorized_keys | grep "$authkey" | wc -l)" == "0" ]; then
   echo "$authkey" >> /root/.ssh/authorized_keys
 fi
